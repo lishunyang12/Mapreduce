@@ -14,8 +14,9 @@ import "log"
 import "io/ioutil"
 import "sort"
 
-// for sorting by key.
+// for sorting by key. a slice of mr.KeyValue struct
 type ByKey []mr.KeyValue
+
 
 // for sorting by key.
 func (a ByKey) Len() int           { return len(a) }

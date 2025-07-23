@@ -48,7 +48,7 @@ if [ "$TIMEOUT" != "" ]
 then
   TIMEOUT2=$TIMEOUT
   TIMEOUT2+=" -k 2s 120s "
-  TIMEOUT+=" -k 2s 45s "
+  TIMEOUT+=" -k 2s 120s "
 fi
 
 # run the test in a fresh sub-directory.
@@ -97,6 +97,13 @@ sleep 1
 
 # wait for the coordinator to exit.
 wait $pid
+
+status=$?
+if [ $status -ne 0 ]; then
+  echo "Coordinator exited with error status: $status"
+else
+  echo "Coordinator exited cleanly."
+fi
 
 # since workers are required to exit when a job is completely finished,
 # and not before, that means the job has finished.

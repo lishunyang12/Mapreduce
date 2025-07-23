@@ -14,6 +14,11 @@ import "strconv"
 // and reply for an RPC.
 //
 
+//
+// example to show how to declare the arguments
+// and reply for an RPC.
+//
+
 type ExampleArgs struct {
 	X int
 }
